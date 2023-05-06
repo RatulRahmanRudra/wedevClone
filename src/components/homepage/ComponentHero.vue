@@ -1,6 +1,6 @@
 <template>
   <div class="row justify-between container">
-    <div class="col-xs-12 col-sm-12 col-md-6 hero-left">
+    <div class="col-xs-12 col-sm-12 col-md-6 hero-left text-center q-ma-auto">
       <div class="text-h3 catchphrase">
         We Create Innovative Tools to Empower Businesses Around the World
       </div>
@@ -10,7 +10,7 @@
         <vue-typewriter-effect :strings="typeWriteTexts" />
       </p>
 
-      <q-card style="width: 70%" class="q-mt-xl text-center">
+      <q-card style="width: 70%" class="q-mt-xl text-center q-ml-xl">
         <q-card-section>
           Empowering <b>520,000+</b> Businesses with Innovation
         </q-card-section>
@@ -27,28 +27,30 @@
     </div>
 
     <div class="col-xs-12 col-sm-12 col-md-6 hero-right">
-      <q-img
-        sizes="sm-20px"
-        class="hero-img-animation"
-        :src="require('assets/homepage/products/dokan.webp')"
-        height="100px"
-        width="100px"
-        style="z-index: 1; left: 40px; top: 367px"
-      />
-      <q-img
-        class="hero-img-animation"
-        :src="require('assets/homepage/products/user-frontend.webp')"
-        height="95px"
-        width="95px"
-        style="z-index: 1; position: relative; top: 580px; left: 55px"
-      />
-      <q-img
-        class="hero-img-animation"
-        :src="require('assets/homepage/products/wemail.webp')"
-        height="50px"
-        width="50px"
-        style="z-index: 1; position: relative; left: 360px; top: 200px"
-      />
+      <div class="floating" v-if="$q.screen.md">
+        <q-img
+          sizes="sm-20px"
+          class="hero-img-animation"
+          :src="require('assets/homepage/products/dokan.webp')"
+          height="100px"
+          width="100px"
+          style="z-index: 1; left: 40px; top: 367px"
+        />
+        <q-img
+          class="hero-img-animation"
+          :src="require('assets/homepage/products/user-frontend.webp')"
+          height="95px"
+          width="95px"
+          style="z-index: 1; position: relative; top: 580px; left: 55px"
+        />
+        <q-img
+          class="hero-img-animation"
+          :src="require('assets/homepage/products/wemail.webp')"
+          height="50px"
+          width="50px"
+          style="z-index: 1; position: relative; left: 360px; top: 200px"
+        />
+      </div>
       <q-img :src="require('src/assets/homepage/hero-feature-img.webp')" />
     </div>
   </div>
@@ -81,7 +83,7 @@ const typeWriteTexts = ref([
 
 .hero-left,
 .hero-right {
-  padding: 0 50px;
+  /*padding: 0 50px;*/
 }
 
 .hero-left {
